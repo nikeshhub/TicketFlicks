@@ -1,5 +1,4 @@
 import {
-  
   Page,
   Text,
   View,
@@ -16,6 +15,10 @@ const Ticket = ({
   discount,
   total,
   poster,
+  address,
+  city,
+  country,
+  unitPrice,
 }) => {
   const ticketSections = [];
 
@@ -32,7 +35,7 @@ const Ticket = ({
           <View style={styles.ticketRight}>
             <Text style={styles.movieName}>{movieTitle}</Text>
             <Text style={styles.movieDetails}>Date: 2023/01/01</Text>
-            <Text style={styles.movieDetails}>Price: $10.00</Text>
+            <Text style={styles.movieDetails}>Price: Rs. {unitPrice}</Text>
           </View>
         </View>
       </View>
@@ -49,16 +52,18 @@ const Ticket = ({
           </View>
 
           {/* Invoice section */}
-          <Text style={styles.subtitle}>Invoice</Text>
+          <Text style={styles.stitle}>Invoice</Text>
 
           <View style={styles.invoiceContainer}>
             {/* Left div in the invoice section */}
             <Text style={styles.subtitle}>Invoice to {fullName}</Text>
-            <Text style={styles.info}>Address</Text>
-            <Text style={styles.info}>City, Country</Text>
+            <Text style={styles.subtitle}>{address}</Text>
+            <Text style={styles.subtitle}>
+              {city}, {country}
+            </Text>
 
             {/* Purchase Details table */}
-            <Text style={styles.subtitle}>Purchase Details</Text>
+            <Text style={styles.stitle}>Purchase Details</Text>
             <View style={styles.table}>
               <View style={styles.tableRow}>
                 <Text style={styles.tableHeader}>Movie Title</Text>
@@ -88,9 +93,6 @@ const Ticket = ({
 
 // Rest of the styles remain unchanged
 
-
-
-
 const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
@@ -108,7 +110,7 @@ const styles = StyleSheet.create({
     color: "#fff", // White text
   },
   ticketFlicks: {
-    backgroundColor: "red",
+    backgroundColor: "#E14658",
     padding: 10,
     marginBottom: 20,
     textAlign: "center",
@@ -118,6 +120,11 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     fontWeight: "bold",
     color: "#555", // Gray
+  },
+  stitle: {
+    fontSize: 24,
+    marginBottom: 10,
+    fontWeight: "bold",
   },
   info: {
     fontSize: 12,
@@ -168,7 +175,8 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   invoiceTotal: {
-    fontSize: 14,
+    textAlign:"right",
+    fontSize: 24,
     fontWeight: "bold",
     marginTop: 10,
   },

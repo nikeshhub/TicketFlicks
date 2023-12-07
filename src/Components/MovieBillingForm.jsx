@@ -52,8 +52,8 @@ const BillingForm = () => {
     zip: yup.string().required("Zip/Postal Code is required."),
   });
   const countryOptions = [
-    { value: "nep", label: "Nepal" },
-    { value: "in", label: "India" },
+    { value: "Nepal", label: "Nepal" },
+    { value: "India", label: "India" },
   ];
 
   const handleSubmit = async (values) => {
@@ -235,7 +235,7 @@ const BillingForm = () => {
                       <p>Subtotal:</p>
                       <p>x{quantity}</p>
                       <p>
-                        <strong>Rs. 1000</strong>
+                        <strong>Rs. {500* quantity}</strong>
                       </p>
                     </div>
                     <div
@@ -272,7 +272,7 @@ const BillingForm = () => {
                         {" "}
                         Rs.{" "}
                         <span style={{ fontSize: "24px", fontWeight: "bold" }}>
-                          1130
+                          {500* quantity * 1.13}
                         </span>
                       </p>
                     </div>
@@ -325,6 +325,9 @@ const BillingForm = () => {
                 <PDFViewer width="100%" height="100%">
                   <Ticket
                     fullName={formik.values.fullName}
+                    address={formik.values.address}
+                    city={formik.values.city}
+                    country={formik.values.country}
                     movieTitle={movieData?.Title}
                     quantity={quantity}
                     subtotal={1000 * quantity}
@@ -332,6 +335,7 @@ const BillingForm = () => {
                     discount={0}
                     total={(1000 * quantity * 1.13).toFixed(2)}
                     poster={movieData.Poster}
+                    unitPrice = '500'
                   />
                 </PDFViewer>
                 <button onClick={handleClosePdf}>Close PDF</button>

@@ -8,16 +8,17 @@ import {
   MinusOutlined,
 } from "@ant-design/icons";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import EventDetails from "./EventDetails";
 
 const { Meta } = Card;
 const { Option } = Select;
 
-const EventDetail = () => {
+const TheatreandConcerts = () => {
   const { id } = useParams();
   const [concertData, setConcertData] = useState(null);
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedLocation, setSelectedLocation] = useState(null);
+const navigate = useNavigate()
+
   const [selectedConcertQuantity, setSelectedConcertQuantity] = useState(1);
   const concertPrice = 1000; // Set the initial price per concert ticket
   console.log(id);
@@ -39,13 +40,11 @@ const EventDetail = () => {
   }, [id]);
 
   // Function to handle changes in date selection
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
 
-  // Function to handle changes in location selection
-  const handleLocationChange = (value) => {
-    setSelectedLocation(value);
+
+
+  const handleBuyTicket = () => {
+    navigate(`/events/${concertData.id}/${selectedConcertQuantity}`);
   };
 
   // Function to handle changes in concert quantity selection
@@ -105,98 +104,20 @@ const EventDetail = () => {
 
         {/* Right Side: Event Details */}
         <Col xs={24} md={24} lg={10} xl={10}>
-          <div style={{ padding: "40px 0" }}>
-            <div
-              style={{
-                display: "flex",
-                width: "90%",
-                padding: "24px",
-                flexDirection: "column",
-                alignItems: "flex-start",
-                gap: "24px",
-                borderRadius: "8px",
-                border: "1px solid var(--dark-mode-border-color, #252D3C)",
-                background: "var(--dark-mode-background-secondary, #1C1C24)",
-                marginTop: "30px",
-              }}
-            >
-              <h2 style={{ marginBottom: "16px", color: "white" }}>
-                Concert Details
-              </h2>
-              <DatePicker
-                onChange={handleDateChange}
-                placeholder="Select Date"
-                style={{ marginBottom: "16px", width: "100%" }}
-                suffixIcon={<CalendarOutlined style={{ color: "black" }} />}
-              />
-              <Select
-                onChange={handleLocationChange}
-                placeholder="Select Location"
-                style={{ marginBottom: "16px", width: "100%" }}
-                suffixIcon={<EnvironmentOutlined style={{ color: "black" }} />}
-              >
-                <Option value="location1">Concert Hall 1</Option>
-                <Option value="location2">Arena Stage</Option>
-                {/* Add more locations as needed */}
-              </Select>
-              <div
-                style={{
-                  marginBottom: "16px",
-                  display: "flex",
-                  alignItems: "center",
-                  color: "white",
-                }}
-              >
-                <span style={{ marginRight: "8px" }}>Select Tickets:</span>
-                <Button
-                  icon={<MinusOutlined />}
-                  style={{
-                    marginRight: "8px",
-                    background: "#333",
-                    border: "none",
-                    display: selectedConcertQuantity === 1 ? "none" : "block",
-                  }}
-                  onClick={() =>
-                    handleQuantityChange(selectedConcertQuantity - 1)
-                  }
-                />
-                <InputNumber
-                  min={1}
-                  max={10}
-                  value={selectedConcertQuantity}
-                  onChange={handleQuantityChange}
-                  style={{
-                    width: "60px",
-                    background: "#333",
-                    color: "white",
-                    border: "none",
-                  }}
-                />
-                <Button
-                  icon={<PlusOutlined />}
-                  style={{
-                    marginLeft: "8px",
-                    background: "#333",
-                    border: "none",
-                    display: selectedConcertQuantity === 10 ? "none" : "block",
-                  }}
-                  onClick={() =>
-                    handleQuantityChange(selectedConcertQuantity + 1)
-                  }
-                />
-              </div>
-              <p style={{ marginBottom: "16px", color: "#555" }}>
-                Total Price: Rs. {totalPrice}
-              </p>
-              <Button type="primary" danger style={{ width: "100%" }}>
-                Buy Tickets
-              </Button>
-            </div>
-          </div>
+        {concertData && (
+            <EventDetails
+              date="Sat, Apr 30, 2022 11:30 AM"
+              location="Kathmandu, Nepal"
+              quantity={selectedConcertQuantity}
+              totalPrice={totalPrice}
+              handleQuantityChange={handleQuantityChange}
+              handleBuyTicket={handleBuyTicket}
+            />
+          )}
         </Col>
       </Row>
     </div>
   );
 };
 
-export default EventDetail;
+export default TheatreandConcerts;

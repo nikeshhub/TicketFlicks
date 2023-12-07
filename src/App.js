@@ -5,10 +5,12 @@ import MovieDetail from "./Components/MovieDetail";
 import { Route, Routes } from "react-router-dom";
 import Movies from "./Components/Movies";
 import Concerts from "./Components/Concerts";
-import EventDetail from "./Components/EventDetail";
+
 import Theatres from "./Components/Theatres";
 
-import BillingForm from "./Components/BillingForm";
+import BillingForm from "./Components/MovieBillingForm";
+import TheatreandConcerts from "./Components/EventDetail";
+import EventBillingForm from "./Components/EventBillingForm";
 
 const App = () => {
   return (
@@ -22,7 +24,8 @@ const App = () => {
         <Route path="/theatres" element={<Theatres />}></Route>
         <Route path="/movies/:id" element={<MovieDetail />}></Route>
         <Route path="/movies/:id/:quantity" element={<BillingForm />}></Route>
-        <Route path="/events/:id" element={<EventDetail />}></Route>
+        <Route path="/events/:id" element={<TheatreandConcerts />}></Route>
+        <Route path="/events/:id/:quantity" element={<EventBillingForm/>}></Route>
       </Routes>
     </div>
   );
