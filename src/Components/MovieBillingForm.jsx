@@ -31,7 +31,7 @@ const BillingForm = () => {
     };
 
     fetchMovieData();
-  }, [id]);
+  }, []);
   const initialValues = {
     fullName: "",
     email: "",
@@ -235,7 +235,7 @@ const BillingForm = () => {
                       <p>Subtotal:</p>
                       <p>x{quantity}</p>
                       <p>
-                        <strong>Rs. {500* quantity}</strong>
+                        <strong>Rs. {500 * quantity}</strong>
                       </p>
                     </div>
                     <div
@@ -272,7 +272,7 @@ const BillingForm = () => {
                         {" "}
                         Rs.{" "}
                         <span style={{ fontSize: "24px", fontWeight: "bold" }}>
-                          {500* quantity * 1.13}
+                          {500 * quantity * 1.13}
                         </span>
                       </p>
                     </div>
@@ -335,7 +335,7 @@ const BillingForm = () => {
                     discount={0}
                     total={(1000 * quantity * 1.13).toFixed(2)}
                     poster={movieData.Poster}
-                    unitPrice = '500'
+                    unitPrice="500"
                   />
                 </PDFViewer>
                 <button onClick={handleClosePdf}>Close PDF</button>
