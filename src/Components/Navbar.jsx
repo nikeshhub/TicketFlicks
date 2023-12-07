@@ -129,7 +129,11 @@ const Navbar = () => {
             <Menu.Item key="3" icon={<SoundOutlined />} className="nav-item">
               <NavLink to="/concerts">Concerts </NavLink>
             </Menu.Item>
-            <Menu.Item key="3" icon={<VideoCameraAddOutlined />} className="nav-item">
+            <Menu.Item
+              key="4"
+              icon={<VideoCameraAddOutlined />}
+              className="nav-item"
+            >
               <NavLink to="/theatres">Theatre Events </NavLink>
             </Menu.Item>
           </Menu>
