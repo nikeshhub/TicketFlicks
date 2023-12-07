@@ -1,0 +1,5 @@
+
+.nav-item.ant-menu-item-selected,
+.nav-item.ant-menu-item:hover {
+  background-color: transparent !important;
+}

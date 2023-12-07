@@ -1,0 +1,45 @@
+/* Customize styles for specific Ant Design Menu items */
+
+.layout .ant-layout-header {
+    
+    background-color: #252D3C !important;
+    /* padding-left: 20px; */
+    /* padding-right: 20px; */
+}
+.layout .ant-menu-horizontal {
+    background-color: #252D3C !important;
+  }
+  
+
+  
+  .layout .ant-menu-item a {
+    color: #fff;
+  }
+  
+  .layout .ant-menu-item:hover, .layout .ant-menu-item-active, .layout .ant-menu-item-selected {
+    background-color: transparent !important;
+    color: red !important;
+  }
+  
+  .layout .ant-drawer-body {
+    padding: 0;
+  }
+  
+  .layout .ant-drawer-content-wrapper {
+    background-color: #001529;
+  }
+  
+  .layout .ant-drawer-title {
+    color: #fff;
+  }
+  
+  /* Customize styles for overflow menu items */
+  .layout .ant-menu-overflow-item {
+    color: #fff;
+  }
+  
+
+  
+  
+  /* Add any additional styles for your application */
+  
