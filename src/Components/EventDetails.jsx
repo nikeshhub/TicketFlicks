@@ -1,7 +1,12 @@
 //event details component
 import React from "react";
 import { Divider, Space, Button, InputNumber } from "antd";
-import { CalendarOutlined, EnvironmentOutlined, PlusOutlined, MinusOutlined } from "@ant-design/icons";
+import {
+  CalendarOutlined,
+  EnvironmentOutlined,
+  PlusOutlined,
+  MinusOutlined,
+} from "@ant-design/icons";
 
 const EventDetails = ({
   date,
@@ -25,7 +30,7 @@ const EventDetails = ({
         marginTop: "30px",
       }}
     >
-      <h2 style={{ margin: "0" }}>Concert Details</h2>
+      <h2 style={{ margin: "0" }}>Events Details</h2>
       <Divider style={{ background: "#97ABC0" }} />
       <Space>
         <div
@@ -73,10 +78,20 @@ const EventDetails = ({
       </Space>
       <Divider style={{ background: "#97ABC0" }} />
       <h2>Select Tickets</h2>
-      <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: "100%",
+        }}
+      >
         <div>
-          <p style={{ color: "#555", fontSize: "20px" }}>{quantity} x Tickets </p>
-          <p style={{ fontSize: "25px", fontWeight: "bold" }}>Rs. {totalPrice}</p>
+          <p style={{ color: "#555", fontSize: "20px" }}>
+            {quantity} x Tickets{" "}
+          </p>
+          <p style={{ fontSize: "25px", fontWeight: "bold" }}>
+            Rs. {totalPrice}
+          </p>
         </div>
         <Space>
           <Button
