@@ -31,7 +31,7 @@ const BillingForm = () => {
     };
 
     fetchMovieData();
-  }, []);
+  });
   const initialValues = {
     fullName: "",
     email: "",
@@ -81,13 +81,13 @@ const BillingForm = () => {
                 <span style={{ color: "#97ABC0" }}>Home</span>
               </Breadcrumb.Item>
               <Breadcrumb.Item>
-                <a href="" style={{ color: "#97ABC0" }}>
+                <a href="/movies" style={{ color: "#97ABC0" }}>
                   Explore Events
                 </a>
               </Breadcrumb.Item>
               <Breadcrumb.Item>
-                <a href="" style={{ color: "#97ABC0" }}>
-                  Oppenhiemer
+                <a href="/movies" style={{ color: "#97ABC0" }}>
+                  {movieData?.Title}
                 </a>
               </Breadcrumb.Item>
               <Breadcrumb.Item>

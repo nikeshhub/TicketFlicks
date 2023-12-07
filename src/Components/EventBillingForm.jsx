@@ -30,7 +30,7 @@ const EventBillingForm = () => {
     };
 
     fetchEventData();
-  }, [id]);
+  });
 
   const initialValues = {
     fullName: "",
@@ -80,13 +80,13 @@ const EventBillingForm = () => {
                 <span style={{ color: "#97ABC0" }}>Home</span>
               </Breadcrumb.Item>
               <Breadcrumb.Item>
-                <a href="" style={{ color: "#97ABC0" }}>
+                <a href="/movies" style={{ color: "#97ABC0" }}>
                   Explore Events
                 </a>
               </Breadcrumb.Item>
               <Breadcrumb.Item>
-                <a href="" style={{ color: "#97ABC0" }}>
-                  Oppenhiemer
+                <a href="/movies" style={{ color: "#97ABC0" }}>
+                  {eventData?.name}
                 </a>
               </Breadcrumb.Item>
               <Breadcrumb.Item>
@@ -271,7 +271,7 @@ const EventBillingForm = () => {
                         {" "}
                         Rs.{" "}
                         <span style={{ fontSize: "24px", fontWeight: "bold" }}>
-                        {1000 * quantity * 1.13}
+                          {1000 * quantity * 1.13}
                         </span>
                       </p>
                     </div>
@@ -334,7 +334,7 @@ const EventBillingForm = () => {
                     discount={0}
                     total={(1000 * quantity * 1.13).toFixed(2)}
                     poster={eventData.images[0].url}
-                    unitPrice='1000'
+                    unitPrice="1000"
                   />
                 </PDFViewer>
                 <button onClick={handleClosePdf}>Close PDF</button>

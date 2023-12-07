@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card, Row, Col, DatePicker, Select, InputNumber } from "antd";
-import {
-  CalendarOutlined,
-  EnvironmentOutlined,
+import {  Card, Row, Col } from "antd";
 
-  PlusOutlined,
-  MinusOutlined,
-} from "@ant-design/icons";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import EventDetails from "./EventDetails";
 
 const { Meta } = Card;
-const { Option } = Select;
+
 
 const TheatreandConcerts = () => {
   const { id } = useParams();
@@ -37,7 +31,7 @@ const navigate = useNavigate()
     };
 
     fetchConcertData();
-  }, [id]);
+  });
 
   // Function to handle changes in date selection
 
