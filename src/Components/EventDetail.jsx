@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {  Card, Row, Col } from "antd";
+import { Card, Row, Col } from "antd";
 
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
@@ -7,11 +7,10 @@ import EventDetails from "./EventDetails";
 
 const { Meta } = Card;
 
-
 const TheatreandConcerts = () => {
   const { id } = useParams();
   const [concertData, setConcertData] = useState(null);
-const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [selectedConcertQuantity, setSelectedConcertQuantity] = useState(1);
   const concertPrice = 1000; // Set the initial price per concert ticket
@@ -34,8 +33,6 @@ const navigate = useNavigate()
   });
 
   // Function to handle changes in date selection
-
-
 
   const handleBuyTicket = () => {
     navigate(`/events/${concertData.id}/${selectedConcertQuantity}`);
@@ -72,7 +69,7 @@ const navigate = useNavigate()
                       ? concertData.images[3].url
                       : "https://placehold.it/500x750" // Placeholder image if no image is available
                   }
-                  style={{ objectFit: "contain",  }}
+                  style={{ objectFit: "contain" }}
                 />
               }
             >
@@ -98,7 +95,7 @@ const navigate = useNavigate()
 
         {/* Right Side: Event Details */}
         <Col xs={24} md={24} lg={10} xl={10}>
-        {concertData && (
+          {concertData && (
             <EventDetails
               date="Sat, Apr 30, 2022 11:30 AM"
               location="Kathmandu, Nepal"

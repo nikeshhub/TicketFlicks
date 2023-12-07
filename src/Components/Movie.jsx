@@ -13,7 +13,7 @@ const Movie = () => {
   const getMovies = async () => {
     try {
       const response = await axios({
-        url: `http://www.omdbapi.com/?s=movie&type=movie&apikey=${omdbApiKey}`,
+        url: `https://www.omdbapi.com/?s=movie&type=movie&apikey=${omdbApiKey}`,
         method: "GET",
       });
       setMovies(response.data.Search);

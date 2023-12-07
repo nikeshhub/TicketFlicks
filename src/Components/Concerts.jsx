@@ -1,3 +1,5 @@
+//component to show concert page.
+
 import React, { useEffect, useState } from "react";
 import { Card, Row, Col } from "antd";
 import axios from "axios";
