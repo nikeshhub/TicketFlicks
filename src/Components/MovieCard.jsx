@@ -1,4 +1,4 @@
-// MovieCard.js
+//Single Movie Card
 import React from "react";
 import { Card } from "antd";
 

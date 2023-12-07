@@ -1,4 +1,4 @@
-// EventDetailsAndTicketSelection.js
+//event details component
 import React from "react";
 import { Divider, Space, Button, InputNumber } from "antd";
 import { CalendarOutlined, EnvironmentOutlined, PlusOutlined, MinusOutlined } from "@ant-design/icons";

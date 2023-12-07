@@ -1,4 +1,4 @@
-// EventDetailsPage.js
+//Movie info page
 import React, { useState, useEffect } from "react";
 import { Row, Col } from "antd";
 import axios from "axios";

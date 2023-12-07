@@ -1,3 +1,5 @@
+//component for checkout of concerts and theatres
+// different checkout is made as movies and concers and theatres use different api
 import { Form, Formik } from "formik";
 import * as yup from "yup";
 import React, { useEffect, useState } from "react";
@@ -14,7 +16,7 @@ const EventBillingForm = () => {
   const [eventData, setEventData] = useState(null);
   const [pdfVisible, setPdfVisible] = useState(false);
   const TICKETMASTER_API_KEY = "tHiymJK0YKLPZlTXnaAKiZ8QW5v4CSe4";
-
+  //getting data
   useEffect(() => {
     const fetchEventData = async () => {
       try {
@@ -41,7 +43,7 @@ const EventBillingForm = () => {
     city: "",
     zip: "",
   };
-
+  //formik validation
   const validationSchema = yup.object({
     fullName: yup.string().required("Full Name is required."),
     email: yup.string().email("Invalid email address"),
@@ -195,8 +197,6 @@ const EventBillingForm = () => {
                       />
                     </div>
                   </div>
-
-                  {/* </Form> */}
                 </div>
               </Col>
               <Col xs={24} md={8}>
