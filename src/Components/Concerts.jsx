@@ -14,17 +14,16 @@ const Concerts = () => {
 
   const getConcerts = async () => {
     try {
-      // Replace 'YOUR_API_KEY' with your actual Ticketmaster API key
+      //fetching concerts data
       const response = await axios({
         url: "https://app.ticketmaster.com/discovery/v2/events.json",
         method: "GET",
         params: {
           apikey: "tHiymJK0YKLPZlTXnaAKiZ8QW5v4CSe4",
-          classificationName: "concert", // Specify the classification for music/concert events
-          
+          classificationName: "concert",
         },
       });
-
+      //setting concert data
       setConcerts(response.data._embedded.events);
     } catch (error) {
       console.error("Error fetching concert data:", error);
@@ -34,7 +33,7 @@ const Concerts = () => {
   useEffect(() => {
     getConcerts();
   }, []);
-
+  //navigating to concert single page
   const handleCardClick = (concertId) => {
     navigate(`/events/${concertId}`);
   };
@@ -65,7 +64,7 @@ const Concerts = () => {
                   src={
                     concert.images && concert.images.length > 0
                       ? concert.images[1].url
-                      : "https://placehold.it/500x750" // Placeholder image if no image is available
+                      : "https://placehold.it/500x750" // in case no images come
                   }
                 />
               }

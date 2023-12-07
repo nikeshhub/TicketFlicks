@@ -20,7 +20,7 @@ const BillingForm = () => {
     const fetchMovieData = async () => {
       try {
         const response = await axios.get(
-          `http://www.omdbapi.com/?i=${id}&apikey=${OMDB_API_KEY}`
+          `https://www.omdbapi.com/?i=${id}&apikey=${OMDB_API_KEY}`
         );
 
         setMovieData(response.data);
