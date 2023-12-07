@@ -3,7 +3,7 @@ import { Button, Card, Row, Col, DatePicker, Select, InputNumber } from "antd";
 import {
   CalendarOutlined,
   EnvironmentOutlined,
-  DollarOutlined,
+
   PlusOutlined,
   MinusOutlined,
 } from "@ant-design/icons";

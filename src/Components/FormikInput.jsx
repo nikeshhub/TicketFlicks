@@ -5,7 +5,7 @@ const FormikInput = ({ name, label, type, required, ...props }) => {
   return (
     <div>
       <Field name={name}>
-        {({ field, form, meta }) => {
+        {({ field, meta }) => {
           return (
             <div
               style={{

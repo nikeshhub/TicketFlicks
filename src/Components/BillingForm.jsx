@@ -2,11 +2,11 @@ import { Form, Formik } from "formik";
 import * as yup from "yup";
 import React, { useEffect, useState } from "react";
 import FormikInput from "./FormikInput";
-import { Row, Col, Button, Divider, Space, Breadcrumb } from "antd";
+import { Row, Col, Divider, Space, Breadcrumb } from "antd";
 import FormikSelect from "./FormikSelect";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { pdf } from "@react-pdf/renderer";
+
 import Ticket from "./Ticket";
 import { PDFViewer } from "@react-pdf/renderer";
 
