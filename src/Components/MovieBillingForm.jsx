@@ -248,7 +248,7 @@ const BillingForm = () => {
                     >
                       <p>VAT (13%):</p>
                       <p>
-                        <strong>Rs.130</strong>
+                        <strong>Rs. {(500 * 0.13).toFixed(2)}</strong>
                       </p>
                     </div>
                     <div
@@ -274,7 +274,7 @@ const BillingForm = () => {
                         {" "}
                         Rs.{" "}
                         <span style={{ fontSize: "24px", fontWeight: "bold" }}>
-                          {500 * quantity * 1.13}
+                          {(500 * quantity * 1.13).toFixed(2)}
                         </span>
                       </p>
                     </div>
