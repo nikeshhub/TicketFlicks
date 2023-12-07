@@ -126,10 +126,10 @@ const Navbar = () => {
             >
               <NavLink to="/movies"> Movies </NavLink>
             </Menu.Item>
-            <Menu.Item key="3" icon={<DesktopOutlined />} className="nav-item">
+            <Menu.Item key="3" icon={<SoundOutlined />} className="nav-item">
               <NavLink to="/concerts">Concerts </NavLink>
             </Menu.Item>
-            <Menu.Item key="3" icon={<DesktopOutlined />} className="nav-item">
+            <Menu.Item key="3" icon={<VideoCameraAddOutlined />} className="nav-item">
               <NavLink to="/theatres">Theatre Events </NavLink>
             </Menu.Item>
           </Menu>
