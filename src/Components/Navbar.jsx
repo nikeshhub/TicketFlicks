@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { Layout, Menu, Button, Drawer, Row, Col } from "antd";
 import {
   HomeOutlined,
-
   PlayCircleOutlined,
   DesktopOutlined,
   MenuOutlined,
-
   VideoCameraAddOutlined,
   SoundOutlined,
 } from "@ant-design/icons";
@@ -14,9 +12,6 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 const { Header } = Layout;
-
-
-
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
@@ -40,14 +35,14 @@ const Navbar = () => {
           maxWidth: "100%",
         }}
       >
-        <Row >
+        <Row>
           <Col xs={20} sm={20} md={4}>
             <NavLink to="/">
               <div
                 className="logo"
                 style={{
                   color: "white",
-                //   padding: "20 30px",
+                  //   padding: "20 30px",
                   paddingTop: "10px",
                   maxWidth: "150px",
                 }}
@@ -59,7 +54,7 @@ const Navbar = () => {
           <Col xs={0} sm={0} md={20}>
             <div
               className="nav-buttons"
-              style={{ display: "flex", alignItems: "center"}}
+              style={{ display: "flex", alignItems: "center" }}
             >
               <Menu
                 theme="dark"
@@ -80,7 +75,7 @@ const Navbar = () => {
                   <NavLink to="/theatres">Theatre events</NavLink>
                 </Menu.Item>
               </Menu>
-              
+
               <Button
                 style={{ color: "white", marginLeft: "10px" }}
                 type="link"
@@ -94,7 +89,6 @@ const Navbar = () => {
               >
                 Register
               </Button>
-              
             </div>
           </Col>
           <Col xs={4} sm={4} md={0}>
@@ -133,7 +127,10 @@ const Navbar = () => {
               <NavLink to="/movies"> Movies </NavLink>
             </Menu.Item>
             <Menu.Item key="3" icon={<DesktopOutlined />} className="nav-item">
-              <NavLink to="/tv-series">TV Series </NavLink>
+              <NavLink to="/concerts">Concerts </NavLink>
+            </Menu.Item>
+            <Menu.Item key="3" icon={<DesktopOutlined />} className="nav-item">
+              <NavLink to="/theatres">Theatre Events </NavLink>
             </Menu.Item>
           </Menu>
         </Drawer>
